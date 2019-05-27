@@ -1,0 +1,19 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compileOnly "io.micronaut:micronaut-inject-groovy:$micronautVersion"
+    compileOnly "io.micronaut.spring:micronaut-spring-annotation:$micronautSpringVersion"
+    compileOnly "org.springframework.boot:spring-boot-starter:$springBootVersion"
+
+    compile 'org.codehaus.groovy:groovy-xml:2.5.7'
+    compile 'com.github.groovy-wslite:groovy-wslite:1.1.2'
+    testCompile("org.spockframework:spock-core:${spockVersion}") {
+        exclude module: 'groovy-all'
+    }
+}
